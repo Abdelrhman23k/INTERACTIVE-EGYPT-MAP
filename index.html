@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Explorer - Interactive Educational & Tech Map</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/maplibre-gl@5.7.3/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@5.7.3/dist/maplibre-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="app-title">Egypt Explorer</h1>
+                <p class="app-subtitle">Discover Egypt's educational and innovation landscape</p>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="section-title">Filter Locations</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="filter-text">All Sites</span>
+                        <span class="filter-count" id="count-all">10</span>
+                    </button>
+                    <button class="filter-btn" data-filter="universities">
+                        <span class="filter-text">Universities</span>
+                        <span class="filter-count" id="count-universities">4</span>
+                    </button>
+                    <button class="filter-btn" data-filter="techparks">
+                        <span class="filter-text">Tech Parks</span>
+                        <span class="filter-count" id="count-techparks">3</span>
+                    </button>
+                    <button class="filter-btn" data-filter="innovation">
+                        <span class="filter-text">Innovation Hubs</span>
+                        <span class="filter-count" id="count-innovation">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="style-section">
+                <h3 class="section-title">Map Settings</h3>
+                <div class="form-group">
+                    <label class="form-label">Map Style</label>
+                    <select class="form-control" id="style-selector">
+                        <option value="positron">Positron</option>
+                        <option value="dark">Dark Matter</option>
+                        <option value="voyager">Voyager</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Color Scheme</label>
+                    <select class="form-control" id="color-selector">
+                        <option value="default">Default</option>
+                        <option value="oceanic">Oceanic Blues</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="map-loading" id="map-loading">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Launching from space to Egypt...</p>
+                    <div class="loading-stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hover Popup Container -->
+            <div class="hover-popup hidden" id="hover-popup">
+                <div class="popup-image-container">
+                    <img class="popup-image" id="popup-image" alt="" />
+                </div>
+                <div class="popup-content">
+                    <h3 class="popup-title" id="popup-title"></h3>
+                    <p class="popup-description" id="popup-description"></p>
+                </div>
+                <button class="popup-close" id="popup-close" aria-label="Close popup">×</button>
+            </div>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <div class="info-header">
+                <h2>🇪🇬 Egypt's Innovation Landscape</h2>
+            </div>
+            <div class="info-content">
+                <div class="info-section">
+                    <h4>Quick Facts</h4>
+                    <ul class="info-list">
+                        <li><strong>Population:</strong> 104+ million (2025)</li>
+                        <li><strong>Universities:</strong> 50+ higher education institutions</li>
+                        <li><strong>Tech Sector:</strong> Fastest growing in MENA region</li>
+                        <li><strong>Innovation:</strong> Major government investment in tech infrastructure</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <h4>Educational Excellence</h4>
+                    <p>Egypt hosts some of the Middle East's most prestigious universities and is rapidly developing as a major technology and innovation hub in the region.</p>
+                </div>
+                <div class="info-section">
+                    <h4>Categories</h4>
+                    <div class="category-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #1e40af;"></span>
+                            <span>Universities</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #059669;"></span>
+                            <span>Tech Parks</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #dc2626;"></span>
+                            <span>Innovation Hubs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

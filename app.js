@@ -21,11 +21,11 @@ class EgyptExplorer {
     this.config = {
       bounds: [[24.70, 21.73], [36.87, 31.67]],
       center: [30.5, 26.0],
-      initialZoom: 5.5,
-      minZoom: 5,
-      maxZoom: 12,
+      initialZoom: 6.5,
+      minZoom: 1,
+      maxZoom: 120,
       globeCenter: [0, 20],
-      globeZoom: 0.5
+      globeZoom: 0.2
     };
 
                 
@@ -361,9 +361,9 @@ class EgyptExplorer {
         zoom: this.config.initialZoom,
         pitch: 45,
         bearing: 0,
-        speed: 0.4,
+        speed: 0.3,
         curve: 1.8,
-        duration: 12000
+        duration: 20000
       });
     }, 200);
 
@@ -1006,12 +1006,17 @@ class EgyptExplorer {
 
 
   resetView() {
-    this.map.flyTo({
-      center: this.config.center,
-      zoom: this.config.initialZoom,
-      duration: 1000
-    });
+    // Hide any open popups before animating
     this.hidePopup();
+    
+    // Animate the camera back to the initial globe view
+    this.map.flyTo({
+      center: this.config.globeCenter, // Fly back to the globe's center point
+      zoom: this.config.globeZoom,     // Zoom out to the far-away view
+      pitch: 0,                        // Reset the camera angle
+      bearing: 0,                      // Reset the camera rotation
+      duration: 3000                   // A smooth 3-second animation
+    });
   }
 
 

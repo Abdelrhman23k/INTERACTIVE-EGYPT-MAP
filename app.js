@@ -291,7 +291,7 @@ class EgyptExplorer {
     ],
     'tileSize': 256,
     // We no longer need 'scheme': 'tms'
-    
+    'attribution': '<a href="https://github.com/freetiler/nasa-blackmarble">freetiler/nasa-blackmarble</a>'
   });
 
   // Add the layer to the map.

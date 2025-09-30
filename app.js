@@ -301,7 +301,7 @@ class EgyptExplorer {
       'type': 'raster',
       'source': 'night-lights-source',
       'paint': {
-        'raster-opacity': 0.9
+        'raster-opacity': 0.5
       }
     },
     firstSymbolId // Place it below labels to keep them readable

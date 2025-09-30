@@ -250,7 +250,7 @@ class EgyptExplorer {
       zoom: this.config.globeZoom,
       pitch: 0,
       bearing: 0,
-      attributionControl: false,
+      attributionControl: true,
       // --- CORRECTION HERE --- 
       // Changed 'name' back to 'type' to correctly initialize the globe.
       projection: { type: 'globe' } 
@@ -291,7 +291,7 @@ class EgyptExplorer {
     ],
     'tileSize': 256,
     // We no longer need 'scheme': 'tms'
-    'attribution': '<a href="https://github.com/freetiler/nasa-blackmarble">freetiler/nasa-blackmarble</a>'
+    
   });
 
   // Add the layer to the map.

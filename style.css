@@ -140,7 +140,9 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
 }
-
+.maplibregl-ctrl-attrib-inner{
+  display:none !important;
+}
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {

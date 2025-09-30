@@ -250,7 +250,7 @@ class EgyptExplorer {
       zoom: this.config.globeZoom,
       pitch: 0,
       bearing: 0,
-      attributionControl: true,
+      attributionControl: false,
       // --- CORRECTION HERE --- 
       // Changed 'name' back to 'type' to correctly initialize the globe.
       projection: { type: 'globe' } 

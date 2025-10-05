@@ -7,7 +7,7 @@ class EgyptExplorer {
     this.markers = [];
     this.isSnappingBack = false; // ADDED: State flag for the snap-back function
     this.currentFilter = 'all';
-    this.currentStyle = 'dark';
+    this.currentStyle = 'positron';
     this.currentColorScheme = 'oceanic';
     this.isLoading = true;
     this.activePopup = null;

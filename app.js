@@ -8,7 +8,7 @@ class EgyptExplorer {
     this.isSnappingBack = false; // ADDED: State flag for the snap-back function
     this.currentFilter = 'all';
     this.currentStyle = 'dark';
-    this.currentColorScheme = 'default';
+    this.currentColorScheme = 'oceanic';
     this.isLoading = true;
     this.activePopup = null;
     this.hoverTimeout = null;
@@ -301,7 +301,7 @@ class EgyptExplorer {
       'type': 'raster',
       'source': 'night-lights-source',
       'paint': {
-        'raster-opacity': 0.4
+        'raster-opacity': 0
       }
     },
     firstSymbolId // Place it below labels to keep them readable
